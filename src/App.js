@@ -52,7 +52,7 @@ function App() {
      <button style={{backgroundColor: "blue", color: "white", borderRadius: "1rem", width:"10em", height:"4em"}} onClick={handleClick}>Open Form</button>
      {openModal && (
           <div className="modal" onClick={handleClose}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content"  id="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={handleClose}>
               &times;
             </button>
@@ -61,7 +61,8 @@ function App() {
               <div>
                 <label htmlFor="username">UserName</label>
                 <input 
-                id="Username" 
+                id="username"
+                className='username' 
                 type="text" 
                 placeholder="Username"
                 required
@@ -86,9 +87,9 @@ function App() {
               </div>
               <div>
                 <label htmlFor="dob">Date of Birth</label>
-                <input type="date" id="dob" onChange={handleDate}/>
+                <input type="date" id="dob" onChange={handleDate} required/>
               </div>
-              <button type='submit'>Submit</button>
+              <button type='submit' className='submit-button' id='submit-button'>Submit</button>
             </form>
           </div>
         </div>
